@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ===== Cravv Design Tokens ===== */
+@theme {
+  --color-primary: #FF5200;
+  --color-primary-light: #FF7843;
+  --color-primary-dark: #E64A19;
+  --color-primary-50: #FFF3ED;
+  --color-primary-100: #FFE2D1;
+  --color-accent: #FF5200;
+
+  --color-success: #1BA672;
+  --color-success-light: #E8F5E9;
+  --color-danger: #E23744;
+  --color-danger-light: #FDEAEC;
+  --color-warning: #DB7C38;
+  --color-info: #5D8BF4;
+
+  --color-bg: #F0F0F5;
+  --color-bg-white: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-card-hover: #FAFAFA;
+  --color-border: #E2E2E7;
+  --color-border-light: #EBEBF0;
+  --color-divider: #F1F1F6;
+
+  --color-text: #1C1C2B;
+  --color-text-sub: #3E4152;
+  --color-text-secondary: #686B78;
+  --color-text-muted: #93959F;
+  --color-text-light: #7E808C;
+  --color-text-inverse: #FFFFFF;
+
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scale-in: scale-in 0.3s ease-out both;
+  --animate-shimmer: shimmer 1.5s infinite;
+
+  --shadow-card: 0 1px 4px rgba(28,28,43,.06), 0 0 1px rgba(28,28,43,.08);
+  --shadow-card-hover: 0 4px 16px rgba(28,28,43,.10), 0 0 1px rgba(28,28,43,.10);
+  --shadow-header: 0 2px 8px rgba(28,28,43,.06);
+  --shadow-btn: 0 2px 8px rgba(255,82,0,.25);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== Reset & Global ===== */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F0F0F5;
+  color: #1C1C2B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D4D5D9; border-radius: 4px; }
+
+/* ===== Utilities ===== */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f5 25%, #e8e8ed 50%, #f0f0f5 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===== Section Separator ===== */
+.section-gap {
+  height: 8px;
+  background: #F0F0F5;
+}
+
+/* ===== Snap Scroll for Reels ===== */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.snap-container::-webkit-scrollbar { display: none; }
+.snap-item {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+/* ===== Focus ===== */
+input:focus { outline: none; }
+button:focus-visible { outline: 2px solid #FF5200; outline-offset: 2px; }
+
+/* ===== Responsive padding helper ===== */
+.page-px {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 640px) {
+  .page-px { padding-left: 24px; padding-right: 24px; }
+}
+@media (min-width: 1024px) {
+  .page-px { padding-left: 40px; padding-right: 40px; }
+}
+@media (min-width: 1280px) {
+  .page-px { padding-left: 64px; padding-right: 64px; }
+}
