@@ -1,4 +1,4 @@
-# 🍕 Cravv — Food Delivery & Reels
+# 🍕 FoodGram — Food Delivery & Reels
 
 A modern, production-grade food delivery web app inspired by Swiggy/Zomato, featuring a **TikTok-style reels discovery feed** and a full **delivery partner dashboard**.
 
